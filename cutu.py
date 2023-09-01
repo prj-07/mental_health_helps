@@ -1,6 +1,6 @@
 import tensorflow as tf
 from transformers import BertTokenizer, TFBertModel
-from transformers import BertTokenizer, BertForMaskedLM
+from transformers import BertTokenizer, TFBertForMaskedLM
 import re
 from transformers import BertTokenizer, BertModel
 from transformers import BertTokenizer
@@ -78,7 +78,7 @@ df['context'] = df['title']+df['content']
 
 model_name = "bert-base-uncased"
 tokenizer = BertTokenizer.from_pretrained(model_name)
-model = BertForMaskedLM.from_pretrained(model_name)
+model = TFBertForMaskedLM.from_pretrained(model_name)
 
 
 # Load pre-trained BART model and tokenizer
